@@ -7,10 +7,10 @@
     <%= render 'shared/idea_error_messages' %>
 
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_area :title, :id => "idea_title" %>
 
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_area :description, :id => "idea_description" %>
 
       <%= f.submit "Submit Idea", class: "btn btn-large btn-primary" %>
     <% end %>
