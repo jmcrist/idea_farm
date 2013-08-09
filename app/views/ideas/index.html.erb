@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="span8 offset2">
+		<% @ideas.each do |i| %>
+			<h3><%= link_to i.title, idea_path(i.id) %></h3>
+			<nav>
+			    <ul class="idea_foot_menu">
+			      <li><strong><small> <%= pluralize(i.comments.count, "Comment") %></small></strong></li>
+			      <li><small>Submitted <%= time_ago_in_words(i.created_at) %> ago</small></li>
+			    </ul>
+			  </nav>
+		<% end %>
+	</div>
+</div>

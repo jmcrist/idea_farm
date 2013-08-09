@@ -1,0 +1,18 @@
+<% provide(:title, 'New Idea') %>
+<h1>New Idea</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@idea) do |f| %>
+    <%= render 'shared/idea_error_messages' %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.submit "Submit Idea", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

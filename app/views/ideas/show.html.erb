@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="span8 offset2">
+		<h3><%= @idea.title %></h3>
+		<pre><%= @idea.description %></pre>
+	</div>
+</div>
+
+<div class="container">
+	<div class="span8 offset2">
+		<h4><%= pluralize(@comments.count, 'Comment') %></h4>
+		<hr>
+
+		<%= form_for([@idea, @idea.comments.build]) do |f| %>
+	    <%= render 'shared/idea_error_messages' %>
+
+	 	  <%= f.hidden_field :name, :value => "#{@current_user.name}" %>
+	      <%= f.text_area :comment, :id => "comment_area" %>
+	      <br />
+	      <div class="pull-right">
+	      	<%= f.submit "Submit", class: "btn btn-default btn-xs" %>
+	      </div>
+	    <% end %>
+	</div>
+</div>
+
+<div class="container">
+	<div class="span8 offset2">
+		<hr>
+		<% @comments.each do |c| %>
+			<h5><%= c.name %> <small><%= time_ago_in_words(c.created_at) %> ago</h5></small>
+			<blockquote><p><%= c.comment %></p></blockquote>
+			<hr>
+		<% end %>
+	</div>
+</div>
+
