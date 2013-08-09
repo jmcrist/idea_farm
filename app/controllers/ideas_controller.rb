@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     if @idea.save
-      flash[:success] = "Seed ##{@idea.id} added to the farm"
+      flash[:success] = "Idea ##{@idea.id} added to the farm"
       redirect_to @idea
     else
       render 'new'

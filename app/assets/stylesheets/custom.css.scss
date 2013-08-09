@@ -156,6 +156,14 @@ textarea#idea_description {
   height: 300px;
 }
 
+.center {
+    text-align:center;
+}
+
+.center form {
+    display:inline-block;
+}
+
 /* ideas page */
 
 pre {
@@ -179,6 +187,11 @@ blockquote p {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.25;
+}
+
+blockquote {
+  padding: 5px;
+  background-color: #E0E4CC;
 }
 
 .idea_foot_menu {
