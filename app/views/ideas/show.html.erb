@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="span8 offset2">
-		<h3><%= @idea.title %></h3>
-		<pre><%= @idea.description %></pre>
+		<h3><%= link_to @idea.title, idea_path(@idea.id) %></h3>
+		<div class="panel"><%= @idea.description %></div>
 	</div>
 </div>
 
