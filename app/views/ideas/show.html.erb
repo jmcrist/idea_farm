@@ -2,16 +2,22 @@
 	<div class="span8 offset2">
 		<h3><%= link_to @idea.title, idea_path(@idea.id) %></h3>
 		<div class="panel"><%= @idea.description %></div>
-		<% if @current_user.id == @idea.user_id %>
-			<nav>
+		<nav>
 				<ul class="idea_show_foot_menu">
+		<% if @current_user.id == @idea.user_id %>
 			    	<li><strong><%= link_to "edit", edit_idea_path(@idea) %></strong></li>
 			    	<li><strong><%= link_to "delete", @idea, method: :delete, 
 			    												data: { confirm: "Are you sure?" } %></strong></li>
-			    	<li><strong><%= link_to "flag for review", '#' %></strong></li>
-				</ul>
-			</nav>
 		<% end %>
+			<% if @idea.flag? %>
+				<li><strong>flagged for review</strong> (<%= link_to "unflag", controller: :ideas, 
+																					action: :flag %>)</strong></li>
+			<% else %>
+				<li><strong><%= link_to "flag for review", controller: :ideas, 
+																action: :flag %></strong></li>
+			<% end %>
+			</ul>
+		</nav>
 	</div>
 </div>
 

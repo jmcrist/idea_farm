@@ -33,6 +33,12 @@ class IdeasController < ApplicationController
     redirect_to ideas_path
   end
 
+  def flag
+    @idea = Idea.find(params[:id])
+    @idea.toggle!(:flag)
+    redirect_to @idea
+  end
+
   private
 
     def idea_params

@@ -21,6 +21,9 @@ IdeaFarm::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   get 'static_pages/home' => 'static_pages#home'
+
+  match 'ideas/:id/flag', to: 'ideas#flag', via: 'post'
+  match 'ideas/:id/flag', to: 'ideas#flag', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
