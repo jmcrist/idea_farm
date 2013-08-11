@@ -195,7 +195,7 @@ blockquote {
 }
 
 .idea_foot_menu {
-  padding: 8px 15px;
+  padding: 1px 5px;
   margin-bottom: 20px;
   list-style: none;
   background-color: #ffffff;
@@ -213,6 +213,29 @@ blockquote {
 }
 
 .idea_foot_menu > .active {
+  color: #999999;
+}
+
+.idea_show_foot_menu {
+  padding: 1px 5px;
+  margin-top: 1px;
+  margin-bottom: 10px;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.idea_show_foot_menu > li {
+  display: inline-block;
+}
+
+.idea_show_foot_menu > li + li:before {
+  padding: 0 5px;
+  color: #cccccc;
+  content: "|\00a0";
+}
+
+.idea_show_foot_menu > .active {
   color: #999999;
 }
 
@@ -247,7 +270,7 @@ blockquote {
   word-wrap: normal;
   word-break: normal;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   background-color: #F8F8F8;
   border: 1px solid #428bca;
   border-radius: 4px;

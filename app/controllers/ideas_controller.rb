@@ -8,7 +8,8 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.new(idea_params)
+    @user = @current_user
+    @idea = @user.ideas.build(idea_params)
     if @idea.save
       flash[:success] = "Idea ##{@idea.id} added to the farm"
       redirect_to @idea
@@ -17,12 +18,19 @@ class IdeasController < ApplicationController
     end
   end
 
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
   def show
     @idea = Idea.find(params[:id])
     @comments = Comment.where(idea_id: @idea.id).order('created_at ASC').collect
   end
 
   def destroy
+    Idea.find(params[:id]).destroy
+    flash[:success] = "Idea toasted."
+    redirect_to ideas_path
   end
 
   private

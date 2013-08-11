@@ -1,4 +1,5 @@
 <div class="container">
+	<h1>Ideas</h1>
 	<div class="span8 offset2">
 		<% @ideas.each do |i| %>
 			<h3><%= link_to i.title, idea_path(i.id) %></h3>
