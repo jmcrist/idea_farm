@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130811215559) do
+ActiveRecord::Schema.define(version: 20130813020757) do
 
   create_table "comments", force: true do |t|
     t.string   "name"
@@ -30,6 +30,11 @@ ActiveRecord::Schema.define(version: 20130811215559) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "flag"
+    t.string   "market"
+    t.string   "profit"
+    t.string   "loe"
+    t.string   "solves"
+    t.string   "product_type"
   end
 
   add_index "ideas", ["flag"], name: "index_ideas_on_flag"

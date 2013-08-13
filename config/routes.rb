@@ -24,6 +24,8 @@ IdeaFarm::Application.routes.draw do
 
   match 'ideas/:id/flag', to: 'ideas#flag', via: 'post'
   match 'ideas/:id/flag', to: 'ideas#flag', via: 'get'
+  match '/flagged_index', to: 'ideas#flagged_index', via: 'get'
+  match '/comments_index', to: 'ideas#comments_index', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

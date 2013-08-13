@@ -7,9 +7,13 @@ class CommentsController < ApplicationController
   def create
     @idea = Idea.find(params[:idea_id])
     @comment = @idea.comments.build(params[:comment].permit(:name, :comment))
-    @comment.save
-
-    redirect_to idea_path(@idea.id)
+    if @comment.save
+      flash[:success] = "Comment saved"
+      redirect_to idea_path(@idea.id)
+      else
+      flash[:error] = "Comment cannot be blank"
+      redirect_to idea_path(@idea.id)
+    end
   end
 
   def show
@@ -22,6 +26,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
   end
 
   def update

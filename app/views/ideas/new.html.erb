@@ -12,6 +12,38 @@
       <%= f.label :description %>
       <%= f.text_area :description, :id => "idea_description" %>
 
+      <!-- <h5>Summary (optional)</h5>
+
+      <table width="100%">
+      <tr>
+          <td align="center">
+            <%= f.label :profit, "Profit potential?" %>
+            <%= f.select :profit, [["", nil], ["low", "low"], ["medium", "medium"], ["high", "high"]] %>
+          </td>
+      </tr>
+        <table width="100%">
+          <tr>
+            <td align="center">
+              <%= f.label :product_type, "What type of product?" %>
+              <%= f.select :product_type, [["", nil], ["toy", "toy"], ["tool", "tool"]] %>
+            </td>
+            <td align="center">
+              <%= f.label :solves, "Solves a..." %>
+              <%= f.select :solves, [["", nil], ["want", "want"], ["need", "need"], ["pain", "pain"]] %>
+            </td>
+          <tr>
+            <td align="center">
+              <%= f.label :market, "Target market is..." %>
+              <%= f.select :market, [["", nil], ["broad", "broad"], ["niched", "niched"], ["super-niched", "super-niched"]] %>
+            </td>
+            <td align="center">
+              <%= f.label :loe, "Level of effort?" %>
+              <%= f.select :loe, [["", nil], ["easy cheesy", "easy cheesy"], ["some work", "some work"], ["lots of work", "lots of work"], ["insane", "insane"]] %>
+            </td>
+          </tr>
+        </table>
+      </table> -->
+
       <div class="pull-right">
         <%= f.submit "Submit Idea", class: "btn btn-large btn-primary" %>
       </div>

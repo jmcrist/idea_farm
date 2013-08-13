@@ -2,7 +2,14 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all.order('created_at DESC')
   end
-  
+
+  def flagged_index
+    @ideas = Idea.all.where(flag: true)
+  end
+
+  def comments_index
+  end
+
   def new
     @idea = Idea.new
   end
@@ -42,6 +49,6 @@ class IdeasController < ApplicationController
   private
 
     def idea_params
-      params.require(:idea).permit(:title, :description)
+      params.require(:idea).permit(:title, :description, :product_type, :market, :profit, :loe, :solves)
     end
 end

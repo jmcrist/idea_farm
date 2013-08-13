@@ -1,0 +1,11 @@
+<div class="container">
+	<h1><%= link_to "Ideas", ideas_path %></h1>
+	<nav class="center">
+		<ul class="idea_show_foot_menu">
+			<li><strong><%= link_to "all ideas", ideas_path %></strong></li>
+			<li><strong><%= link_to "flagged ideas", flagged_index_path %></strong></li>
+			<li><strong>most commented</strong></li>
+		</ul>
+	</nav>
+
+	<%= render 'shared/index_body' %>
